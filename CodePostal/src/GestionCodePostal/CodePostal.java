@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Test;
+package GestionCodePostal;
 
 import com.google.gson.Gson;
 import com.google.gson.internal.LinkedTreeMap;
@@ -27,18 +27,21 @@ public class CodePostal {
     private List<String> lesVilles;
 
     public CodePostal(int code) {
-  //      CodePostal(String.valueOf(code));
+        start(String.valueOf(code));
     }
 
     public CodePostal(String code) {
+        start(code);
+    }
+
+    private void start(String code) {
         if (code.length() != 5) {
             System.out.println("erreur code invalide");
         }
-        
+
         lesVilles = new LinkedList<>();
         String url = "http://www.cp-ville.com/cpcom.php?cpcommune=" + code;
 
-        
         String html = getHTML(url);
 // replacement de caratére 
         html = html.replace("jsoncallback(", "").replace(");", "");
@@ -73,8 +76,7 @@ public class CodePostal {
         Object Scount = fromJson.get("count");
         int count = (int) Double.parseDouble(Scount.toString());
 //        System.out.println("nombre de ville : " + count);
-        
-        
+
         for (int i = 1; i <= count; i++) {
             LinkedTreeMap get = (LinkedTreeMap) fromJson.get(String.valueOf(i));
             String ville = (String) get.get("ville");

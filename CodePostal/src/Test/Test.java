@@ -5,6 +5,7 @@
  */
 package Test;
 
+import GestionCodePostal.CodePostal;
 import java.util.List;
 
 /**
@@ -15,7 +16,7 @@ public class Test {
 
     public static void main(String[] args) {
         CodePostal codePostal = new CodePostal("62160");
-         codePostal = new CodePostal("59100");
+        
         System.out.println("Ville recupérer en tableau");
         String[] lesVillesArray = codePostal.getLesVillesArray();
         for (String lesVilles : lesVillesArray) {
