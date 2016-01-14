@@ -44,7 +44,7 @@ public class CodePostal {
 
         String html = getHTML(url);
 // replacement de caratére 
-        html = html.replace("jsoncallback(", "").replace(");", "");
+        html = html.substring(13, html.length() - 2);
 
         decode(html);
 

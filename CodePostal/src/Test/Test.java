@@ -17,13 +17,13 @@ public class Test {
     public static void main(String[] args) {
         CodePostal codePostal = new CodePostal("62160");
         
-        System.out.println("Ville recupérer en tableau");
+        System.out.println("¤¤ Ville recupérer en tableau");
         String[] lesVillesArray = codePostal.getLesVillesArray();
         for (String lesVilles : lesVillesArray) {
             System.out.println(lesVilles);
         }
 
-        System.out.println("ville recupérer en liste");
+        System.out.println("¤¤ ville recupérer en liste");
         List<String> lesVillesList = codePostal.getLesVillesList();
         for (String lesVilles : lesVillesList) {
             System.out.println(lesVilles);
